@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Talent Sage</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    .left-text {
+      float: left;
+      width: 50%;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .heading {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .button-group {
+      text-align: center;
+    }
+
+    .submit-button,
+    .reset-button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-button {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .reset-button {
+      background-color: #6c757d;
+      color: #fff;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .form-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .form-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      font-family: 'Roboto', sans-serif; /* Change font to Roboto */
+    }
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    /* Added CSS for clickable login button */
+    .nav-link.login-button {
+      cursor: pointer;
+      color: #007bff; /* Changed default color */
+    }
+
+    .nav-link.login-button:hover {
+      color: #0056b3; /* Darker shade on hover */
+    }
+
+    .skill-text {
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .skill-text:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>Talent Sage</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link login-button" onclick="openLogin()">Login <span class="sr-only">(current)</span></a> <!-- Changed to Login -->
+              </li>
+            </ul>
+            <div class="quote_btn-container">
+              <form class="form-inline">
+                <button class="btn   nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Welcome to TalentSage!!
+                    </h1>
+                    <p>
+                      This is a platform where individual can look for jobs and companies can analyse their employment data to reduce Attrition
+                    </p>
+                    <div class="btn-box">
+                      <a href="#" class="btn-1" onclick="openForm()">
+                        Are you looking for Job?
+                      </a>
+                      <a href="#" class="btn-1">
+                        Are you an Enterprise?
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class=" col-lg-10 mx-auto">
+                      <div class="img-box">
+                        <img src="images/slider-img.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Removed carousel controls -->
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section ">
+    <!-- Your form HTML goes here -->
+    <div class="form-container" id="formContainer">
+      <div class="form-content">
+        <span class="close-button" onclick="closeForm()">&times;</span>
+        <h2 class="heading">Tell Us About Yourself!</h2>
+        <form id="userForm" onsubmit="handleSubmit(event)">
+          <div class="form-group color1">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group color2">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+          </div>
+          <div class="form-group color3">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="non-binary">Non-Binary</option>
+            </select>
+          </div>
+          <div class="form-group color4">
+            <label for="skills">Skills:</label>
+            <div id="skillsOptions">
+              <span class="skill-text" onclick="addSkill('Java Developer')" style="color: #000000;">Java Developer</span>
+              <span class="skill-text" onclick="addSkill('Hardworking')" style="color: #000000;">Hardworking</span>
+              <span class="skill-text" onclick="addSkill('Consistent')" style="color: #000000;">Consistent</span>
+              <span class="skill-text" onclick="addSkill('Communication Skills')" style="color: #000000;">Communication Skills</span>
+              <span class="skill-text" onclick="addSkill('Emotional intelligence')" style="color: #000000;">Emotional intelligence</span>
+              <span class="skill-text" onclick="addSkill('Conflict resolution')" style="color: #000000;">Conflict resolution</span>
+              <span class="skill-text" onclick="addSkill('Decision-making')" style="color: #000000;">Decision-making</span>
+              <span class="skill-text" onclick="addSkill('Leadership development')" style="color: #000000;">Leadership development</span>
+              <span class="skill-text" onclick="addSkill('Cultural awareness')" style="color: #000000;">Cultural awareness</span>
+              <span class="skill-text" onclick="addSkill('Negotiation')" style="color: #000000;">Negotiation</span>
+              <span class="skill-text" onclick="addSkill('Networking')" style="color: #000000;">Networking</span>
+              <span class="skill-text" onclick="addSkill('Presentation skills')" style="color: #000000;">Presentation skills</span>
+              <span class="skill-text" onclick="addSkill('Coaching/mentoring')" style="color: #000000;">Coaching/mentoring</span>
+              
+              <!-- Add more skills as needed -->
+            </div>
+          </div>
+
+          <div class="form-group color4">
+            <label for="selectedSkills">Selected Skills:</label>
+            <textarea id="selectedSkills" name="selectedSkills" rows="4" cols="50" readonly></textarea>
+          </div>
+
+          <div class="form-group color5">
+            <!-- Department -->
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+              <option value="">Select</option>
+              <option value="HR">Human Resource</option>
+              <option value="Reserch and Development">Research & Development</option>
+              <option value="Sales">Sales</option>
+            </select>
+          </div>
+
+          <div class="form-group color6">
+            <!-- Role -->
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+              <option value="">Select</option>
+              <option value="Human Resource">Human Resource</option>
+              <option value="Research Scientist">Research Scientist</option>
+              <option value="Manager">Manager</option>
+              <option value="Laboratory Technician">Laboratory  Technician</option>
+              <option value="Research Director">Reasearch Director</option>
+              <option value="Manufacturing Director">Manufacturing Director</option>
+              <option value="Healthcare Representative">Healthcare Representative</option>
+              <option value="Sales Executive">Sales Executive</option>
+              <option value="Sales Representative">Sales Representative</option>
+            </select>
+          </div>
+
+          <div class="form-group color7">
+            <!-- Degree -->
+            <label for="degree">Degree:</label>
+            <select id="degree" name="degree" required>
+              <option value="">Select</option>
+              <option value="Medical">Medical</option>
+              <option value="Human Resource">Human Resource</option>
+              <option value="Life Sciences">Life Sciences</option>
+              <option value="Other">Other</option>
+              <option value="Technical Degree">Technical Degree</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="submit-button">Submit</button>
+            <button type="reset" class="reset-button">Reset</button>
+          </div>
+        </form>
+        <p id="message"></p>
+      </div>
+    </div>
+    <!-- End of form container -->
+  </section>
+  <!-- footer section -->
+
+  <script>
+    function openForm() {
+      document.getElementById("formContainer").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("formContainer").style.display = "none";
+    }
+
+    // Function to add a skill to the selected skills textarea
+    function addSkill(skillName) {
+      var selectedSkillsTextarea = document.getElementById('selectedSkills');
+      selectedSkillsTextarea.value += skillName + ', ';
+    }
+
+    // Function to handle form submission
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      // Extract form data
+      const formData = new FormData(document.getElementById('userForm'));
+
+      // Send form data to the server
+      fetch('your_ml_endpoint', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.text();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(data => {
+        // Handle response from the server
+        console.log(data);
+        alert('Form submitted successfully!');
+        // Optionally, reset the form after successful submission
+        document.getElementById('userForm').reset();
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        alert('An error occurred while submitting the form.');
+      });
+    }
+
+    // Function to open the login page
+    function openLogin() {
+      window.location.href = "userloginandpass.html";
+    }
+  </script>
+
+</body>
+
+</html>
