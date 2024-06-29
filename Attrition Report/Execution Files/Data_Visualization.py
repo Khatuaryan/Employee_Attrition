@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-NEW = pd.read_csv('Encoded_Dataset.csv')  # Update 'your_dataset.csv' with your dataset filename
+NEW = pd.read_csv('Encoded_Dataset.csv')
 
 # Visualize Attrition counts
 plt.figure(figsize=(8, 6))
